@@ -8,16 +8,19 @@
 // Input strings are guaranteed to be English words in all lowercase.
 
 function translatePigLatin(str) {
-  let firstVowelIndex = str.search(/[aeiou]/);
+  let firstVowelIndex = str.search(/a|e|i|o|u|/);
 
   // also included edge-case if the string doesn't have a vowe
 
   return firstVowelIndex == -1 ? str + "ay" : (firstVowelIndex == 0 ? str + "way" :  str.slice(firstVowelIndex)+ str.slice(0,firstVowelIndex) + "ay");
 }
 
-console.log(translatePigLatin("by"));
-console.log(translatePigLatin("Monkey hel."));
-console.log(translatePigLatin("apple"));
+console.log(translatePigLatin("by")); // byway
+
+console.log(translatePigLatin("Monkey hel.")); //Monkey hel.way
+
+console.log(translatePigLatin("apple")); // appleway
+
 
 // function translatePigLatin(str) {
 //     var strArr = [];
